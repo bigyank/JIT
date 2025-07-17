@@ -1,0 +1,349 @@
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #333;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.tool-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.tool-selector button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tool-selector button:hover {
+  background-color: #666;
+}
+
+.tool-selector button.active {
+  background-color: #4a90e2;
+}
+
+.view-toggle-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.view-toggle-button:hover {
+  background-color: #3a80d2;
+}
+
+.app-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* JS Scoping Explanation Styles */
+.js-scoping-explanation {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.explanation-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  overflow-x: auto;
+}
+
+.explanation-tabs button {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.explanation-tabs button:hover {
+  background-color: #e9e9e9;
+}
+
+.explanation-tabs button.active {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+.explanation-section {
+  text-align: left;
+}
+
+.explanation-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.explanation-example {
+  margin: 20px 0;
+}
+
+.explanation-example h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.explanation-diagram {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.explanation-notes {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #e9f7fe;
+  border-left: 4px solid #4a90e2;
+  border-radius: 4px;
+}
+
+.explanation-notes ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+.explanation-notes li {
+  margin-bottom: 8px;
+}
+
+/* Diagrams */
+.scope-diagram, .closure-diagram, .hoisting-diagram, .this-binding-diagram, .module-scope-diagram {
+  margin: 15px 0;
+}
+
+.scope-level, .closure-function, .binding-rule, .module-scope {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+.scope-level h4, .closure-function h4, .binding-rule h4, .module-scope h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.scope-vars, .closure-vars, .module-vars {
+  margin-left: 15px;
+  padding: 10px;
+  border-left: 2px solid #4a90e2;
+}
+
+.scope-var, .closure-var, .module-var {
+  font-family: monospace;
+  margin-bottom: 5px;
+}
+
+.module-var.private {
+  color: #6c757d;
+}
+
+.module-var.exported {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.module-var.imported {
+  color: #007bff;
+}
+
+.scope-level.global {
+  border-color: #28a745;
+}
+
+.scope-level.outer {
+  margin-left: 30px;
+  border-color: #fd7e14;
+}
+
+.scope-level.inner {
+  margin-left: 30px;
+  border-color: #dc3545;
+}
+
+.module-files {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.module-file h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .App {
+    background-color: #1a1a1a;
+    color: #f9f9f9;
+  }
+
+  .app-header {
+    background-color: #222;
+    border-bottom: 1px solid #444;
+  }
+  
+  .tool-selector button {
+    background-color: #444;
+  }
+  
+  .tool-selector button:hover {
+    background-color: #555;
+  }
+  
+  .explanation-tabs button {
+    background-color: #333;
+    border-color: #444;
+    color: #e2e8f0;
+  }
+  
+  .explanation-tabs button:hover {
+    background-color: #444;
+  }
+  
+  .explanation-section h2, .explanation-example h3, .explanation-notes h3 {
+    color: #e2e8f0;
+  }
+  
+  .explanation-diagram {
+    background-color: #2d3748;
+  }
+  
+  .explanation-notes {
+    background-color: #2d3748;
+    border-left-color: #4a90e2;
+  }
+  
+  .scope-level, .closure-function, .binding-rule, .module-scope {
+    background-color: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  .scope-level h4, .closure-function h4, .binding-rule h4, .module-scope h4 {
+    color: #e2e8f0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .visualization-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .module-files {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .memory-model {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .control-panel {
+    flex-wrap: wrap;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .app-title {
+    align-items: center;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
